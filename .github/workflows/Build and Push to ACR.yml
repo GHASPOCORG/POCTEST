@@ -2,7 +2,11 @@ name: Build and Push to ACR
 
 on:
   workflow_dispatch:
-
+permissions:
+  contents: read
+  id-token: write
+  actions: read
+  security-events: write
 env:
   REGISTRY: poctestacr.azurecr.io
   IMAGE_NAME: mdc-mock-0001
