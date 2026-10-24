@@ -34,7 +34,10 @@ jobs:
       - name: Push Docker image to ACR
         run: |
           docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-      - name: Run Microsoft Security DevOps
+          
+      - name: Run Microsoft Security DevOps - Container Mapping
         uses: microsoft/security-devops-action@latest
         id: msdo
+        with:
+          tools: container-mapping
 
